@@ -33,7 +33,7 @@ else {
 }
 
 $connection = curl_init();
-curl_setopt($connection, CURLOPT_URL, "https://web.njit.edu/~UCID/cs490/back.php");
+curl_setopt($connection, CURLOPT_URL, "https://web.njit.edu/~bm297/cs490/back.php");
 curl_setopt($connection, CURLOPT_POSTFIELDS, http_build_query(array(
   "njitucid" => $ucid,
   "userpassword" => $password
