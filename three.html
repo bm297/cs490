@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS490 Login</title>
+
+<style>
+		@font-face {
+        font-family: 'San Francisco Text';
+        src: url('SanFranciscoText-Regular.eot');
+        src: url('SanFranciscoText-Regular.eot?#iefix') format('embedded-opentype'),
+            url('SanFranciscoText-Regular.woff2') format('woff2'),
+            url('SanFranciscoText-Regular.woff') format('woff'),
+            url('SanFranciscoText-Regular.ttf') format('truetype'),
+            url('SanFranciscoText-Regular.svg#SanFranciscoText-Regular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'San Francisco Text';
+        src: url('SanFranciscoText-Bold.eot');
+        src: url('SanFranciscoText-Bold.eot?#iefix') format('embedded-opentype'),
+            url('SanFranciscoText-Bold.woff2') format('woff2'),
+            url('SanFranciscoText-Bold.woff') format('woff'),
+            url('SanFranciscoText-Bold.ttf') format('truetype'),
+            url('SanFranciscoText-Bold.svg#SanFranciscoText-Bold') format('svg');
+        font-weight: bold;
+        font-style: normal;
+    }
+
+    h2 {
+        font-family: 'San Francisco Text';
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 50px;
+				color: #ffffff;
+    }
+
+    p {
+        font-family: 'San Francisco Text';
+        font-size: 18px;
+				color: #ffffff;
+    }
+    .container {
+        padding: 0px 0px 0px 0px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    body {
+				background-image: url("NJIT.jpeg");
+				background-attachment: fixed;
+				background-repeat: no-repeat;
+				background-size: cover;
+        text-align: center;
+        margin: 0 auto;
+        width: 100%;
+    }
+		@media only screen and (min-device-width: 320px) and (max-device-width: 736px) {
+      h2 {
+        font-size: 36px;
+      }
+      p {
+        font-size: 24px;
+      }
+      input[type=text], input[type=password]{
+        font-size: 24px;
+      }
+      button {
+        font-size: 24px;
+      }
+		}
+</style>
+
+</head>
+
+<body>
+	<section class="container">
+		<h2>CS490 Login Page</h2>
+			<div class="output">
+                <p>Backend Login Unsuccessful</p>
+  			<p>UCID Login Unsuccessful</p>
+			</div>
+</body>
+
+</html>
