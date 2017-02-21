@@ -2,10 +2,7 @@
 
 $testcategory = "recursion";
 $testname = "factorial";
-$testanswer = "def factorial(number):
-  if number < 2:
-    return 1
-  return number * factorial(number - 1)";
+$testanswer = "public static int factorial(int number){if (number < 2){return 1;}return (number*factorial(number-1));}";
 $testtestcase = 5;
 $testtestcaseresult = 120;
 
@@ -26,7 +23,8 @@ $testcase = $capture["testcase"];
 $testcaseresult = $capture["testcaseresult"];
 $grade = 0;
 $feedback = "";
-$file = "temporary.py";
+$file = "temporary.java";
+file_put_contents($file, "class temporary {\n\n", FILE_APPEND);
 file_put_contents($file, $answer, FILE_APPEND);
 
 $namecheck = strpos($answer, $name);
@@ -83,17 +81,6 @@ else if ($category == "conditional") {
     $feedback .= "No Conditional (+0)\n";
   }
 }
-else if ($category == "dictionary") {
-  $identifiercount = substr_count($answer, "{");
-  if ($identifiercount > 0) {
-    $grade += 1;
-    $feedback .= "Dictionary (+1)\n";
-  }
-  else {
-    $grade += 0;
-    $feedback .= "No dictionary (+0)\n";
-  }
-}
 else if ($category == "indexing") {
   $identifiercount = substr_count($answer, "[");
   if ($identifiercount > 0) {
@@ -120,22 +107,29 @@ else {
 }
 
 file_put_contents($file, "\n\n", FILE_APPEND);
-file_put_contents($file, "print($name($testcase))", FILE_APPEND);
+file_put_contents($file, "public static void main(String[] args) {\n", FILE_APPEND);
+file_put_contents($file, "System.out.println($name($testcase));\n", FILE_APPEND);
+file_put_contents($file, "}\n\n}\n", FILE_APPEND);
 
-$output = shell_exec("python temporary.py");
-if ($output == $testcaseresult) {
-  $grade += 2;
-  $feedback .= "Code compiles (+1)\n";
-  $feedback .= "Correct result (+1)";
-}
-else if ($output > 0) {
+exec("javac temporary.java");
+$newfile = "temporary.class";
+if (file_exists($newfile) == true) {
   $grade += 1;
   $feedback .= "Code compiles (+1)\n";
-  $feedback .= "Incorrect result (+0)";
 }
 else {
-  $grade -= 0;
-  $feedback .= "Code does not compiles (-1)";
+  $grade -= 1;
+  $feedback .= "Code does not compiles (-1)\n";
+}
+
+$output = shell_exec("java temporary");
+if ($output == $testcaseresult) {
+  $grade += 1;
+  $feedback .= "Correct result (+1)";
+}
+else {
+  $grade += 0;
+  $feedback .= "Incorrect result (+0)";
 }
 
 $capture["grade"] = $grade;
