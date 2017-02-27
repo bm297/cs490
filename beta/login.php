@@ -13,18 +13,18 @@ curl_setopt($connection, CURLOPT_URL, "https://web.njit.edu/~ab674/cs490/sendLog
 curl_setopt($connection, CURLOPT_POSTFIELDS, $capture );
 curl_setopt($connection, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
-$verification = curl_exec($connection);
-$verification = json_decode($verification, 1);
+$designation = curl_exec($connection);
+$designation = json_decode($designation, 1);
 curl_close($connection);
 
 if ($designation == "professor") {
-	header("location: professorLogin.html");
+	header("location: WelcomeInst.html");
 }
 else if ($designation == "student") {
-	header("location: studentLogin.html");
+	header("location: WelcomeStd.html");
 }
 else {
-	header("location: failedLogin.html");
+	header("location: index.html");
 }
 
 ?>

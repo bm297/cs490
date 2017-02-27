@@ -1,26 +1,26 @@
 <?php
 
-$testcategory = "recursion";
-$testname = "factorial";
-$testanswer = "public static int factorial(int number){if (number < 2){return 1;}return (number*factorial(number-1));}";
-$testtestcase = 5;
-$testtestcaseresult = 120;
+$capture = json_decode(file_get_contents("php://input"), true);
 
-$capture = array(
-  "category" => $testcategory,
-  "name" => $testname,
-  "answer" => $testanswer,
-  "testcase" => $testtestcase,
-  "testcaseresult" => $testtestcaseresult
-);
+$columns = mysqli_num_fields($capture);
+while($elem = mysqli_fetch_array($rows)){
+  echo "<tr>";
+  echo "<label><input type=\"checkbox\" id=\"cbox$count\" value=\"question$count\">"; // SKIP SPLIT SCREEN FOR NOW
+  for($i = 0; $i < $cols; $i++){
+		echo "<td>$elem[$i] </td>";
+	}
+  echo "</label>";
+	echo "</tr>";
+  $count+=1;
+}
 
-// $capture = json_decode(file_get_contents("php://input"), true);
-$difficulty = $capture["difficulty"];
-$category = $capture["category"];
-$name = $capture["name"];
-$answer = $capture["answer"];
-$testcase = $capture["testcase"];
-$testcaseresult = $capture["testcaseresult"];
+$question = $result["question"];
+$answer = $result["answer"];
+$difficulty = $result["difficulty"];
+$category = $result["category"];
+$name = $result["name"];
+$testcase = $result["testcase"];
+$testcaseresult = $result["testcaseresult"];
 $grade = 0;
 $feedback = "";
 $file = "temporary.java";
