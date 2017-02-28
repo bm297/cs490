@@ -1,0 +1,81 @@
+CS 490 Project Questions
+
+Write a function called factorial that takes an integer input called number and returns the factorial of that integer using recursive calls.
+Function name: factorial
+Category: recursion
+Difficulty: medium
+Test case: 5 
+Test case result: 120
+Result: "public static int factorial(int number){if (number < 2){return 1;}return (number*factorial(number-1));}"
+
+Write a function called exponential that takes an integer input called number and returns the integer to the power of itself using a for loop.
+Function name: exponential
+Category: forloop
+Difficulty: medium
+Test case: 5
+Test case result: 3125
+Result: "public static int exponential(int number) {int total=1;for (int i=0; i<number; i++){total = total*number;}return total;}"
+
+Write a function called parity that takes an integer input called number and returns the string "even" if the integer is even or "odd" if the integer is odd using conditional statements.
+Function name: parity
+Category: conditional
+Difficulty: medium
+Test case: 5
+Test case result: "odd"
+Result: "public static String parity(int number) {if (number%2==0) {return "even";}else {return "odd";}}"
+
+Write a function called doubleNumber that takes an integer input called number, continuously doubles it as long as the new number is less than the result of the original number squared, and returns the number of iterations of the loop.
+Function name: doubleNumber
+Category: whileloop
+Difficulty: hard
+Test case: 5
+Test case result: 3
+Result: "public static int doubleNumber(int number) {int newNumber=number;int count=0;while (newNumber<(number*number)) {newNumber=newNumber*2;count++;}return count;}"
+
+Write a function called finder that takes a string input called text and returns the index which corresponds to the first occurrence of the letter "a". If "a" is not present in the string then the function should return the value 999. 
+Function name: finder
+Category: indexing
+Difficulty: hard
+Test case: "test"
+Test case result: 999
+Result: "public static int finder(String text) {for (int i=0; i<text.length(); i++) {char temp=text.charAt(i);if (temp=='a') {return i;}}return 999;}"
+
+Write a function called addition that takes two integer inputs called number1 and number2 and returns the sum of the two numbers. 
+Function name: addition
+Category: none
+Difficulty: easy
+Test case: 5,5
+Test case result: 10
+Result: "public static int addition(int number1, int number2) {;return number1+number2;}"
+
+Write a function called subtraction that takes two integer inputs called number1 and number2 and returns the difference between the two numbers. 
+Function name: subtraction
+Category: none
+Difficulty: easy
+Test case: 10,5
+Test case result: 5
+Result: "public static int subtraction(int number1, int number2) {;return number1-number2;}"
+
+Write a function called multiplication that takes two integer inputs called number1 and number2 and returns the two numbers multiplied. 
+Function name: multiplication
+Category: none
+Difficulty: easy
+Test case: 5,5
+Test case result: 25
+Result: "public static int multiplication(int number1, int number2) {return number1*number2;}"
+
+Write a function called returnText that returns "Hello World".
+Function name: returnText
+Category: none
+Difficulty: easy
+Test case:
+Test case result: "Hello World"
+Result: "public static String returnText() {return "Hello World";}"
+
+Write a function called duplication that takes one integer input called number and returns the same number.
+Function name: duplication
+Category: none
+Difficulty: easy
+Test case: 5
+Test case result: 5
+Result: "public static int duplication(int number) {return number;}"
