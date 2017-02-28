@@ -1,0 +1,25 @@
+div.box {
+  background: #EEE;
+  height: static;
+  width: static;
+}
+
+div.div1 {
+  background: #F8F8FF;
+  float: left;
+  height: static;
+  width: 50%;
+}
+
+div.div2 {
+  background: #F2F1F1;
+  height: 100%;
+  width: 50%;
+  float: right;
+}
+div.div1 h4{
+  text-align: center;
+}
+div.div2 h4{
+  text-align: center;
+}
