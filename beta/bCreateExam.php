@@ -4,6 +4,7 @@
 	<body>
 		<?php
 
+
 //
 //		THIS PART ONLY FOR BACKEND. DO NOT TOUCH.
 //
@@ -20,6 +21,18 @@ $query = "select * from $tbl";
 // Execute the query
 $rows = mysqli_query($conn, $query);
 
+// Create a JSON array of DB Object
+$json = array();
+while($row = mysqli_fetch_assoc($rows)){
+	$json[] = $row['Question'];
+	$json[] = $row['Difficulty'];
+}
+
+// Returns JSON array of DB Object
+echo json_encode($json);
+
+
+/*
 //
 // echo $rows; DO NOT USE
 //
@@ -49,7 +62,7 @@ $cols = mysqli_num_fields($rows); # Returns 5
 	}
 
 	echo "</tr>";	
-	echo "</table>";
+	echo "</table>";*/
 
 
 	?>
