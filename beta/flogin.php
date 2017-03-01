@@ -9,7 +9,7 @@ $capture = array(
 $capture = json_encode($capture);
 
 $connection = curl_init();
-curl_setopt($connection, CURLOPT_URL, "http://afsaccess3.njit.edu/~ab674/cs490/sendLogin.php");
+curl_setopt($connection, CURLOPT_URL, "https://web.njit.edu/~bm297/CS490-Exam-System/msendLogin.php");
 curl_setopt($connection, CURLOPT_POSTFIELDS, $capture );
 curl_setopt($connection, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
 curl_setopt($connection, CURLOPT_RETURNTRANSFER, 1);
@@ -18,13 +18,13 @@ $designation = json_decode($designation, 1);
 curl_close($connection);
 
 if ($designation == "professor") {
-	header("location: WelcomeInst.html");
+	header("location: fWelcomeInst.html");
 }
 else if ($designation == "student") {
-	header("location: WelcomeStd.html");
+	header("location: fWelcomeStd.html");
 }
 else {
-	header("location: failedindex.html");
+	header("location: ffailedindex.html");
 }
 
 ?>
