@@ -1,11 +1,13 @@
 <?php
 
-$function_name = $_POST["function_name"];
-$language = $_POST["language"];
-$question = $_POST["question"];
-$difficulty = $_POST["difficulty"];
-$test_case = $_POST["test_case"];
-$test_result = $_POST["test_result"];
+$capture = json_decode(file_get_contents("php://input"), true);
+
+$function_name = $capture["function_name"];
+$language = $capture["language"];
+$question = $capture["question"];
+$difficulty = $capture["difficulty"];
+$test_case = $capture["test_case"];
+$test_result = $capture["test_result"];
 
 
 //
